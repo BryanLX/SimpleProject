@@ -2,7 +2,7 @@
     <span>Top Hat Testing app</span>
 </mat-toolbar>
 
-<label id="top-selection">Pick the mode :</label>
+<!-- <label id="top-selection">Pick the mode :</label>
 <mat-radio-group
   aria-labelledby="top-selection"
   class="selection-group"
@@ -11,16 +11,16 @@
     {{mode}}
   </mat-radio-button>
 </mat-radio-group>
-<div>Your favorite season is: {{currentMode}}</div>
+<div>Your favorite season is: {{currentMode}}</div> -->
 
 
 <mat-divider></mat-divider>
 <div class="search-area">
     <mat-form-field style= "margin-left:10px" appearance="standard">
-      <mat-label>Id</mat-label>
-      <input [(ngModel)]="photoId" matInput>
+      <mat-label>User Input: </mat-label>
+      <input [(ngModel)]="userInput" (ngModelChange)="inputChange()" matInput>
     </mat-form-field>
-    <br>
+    <!-- <br>
     <mat-form-field style= "margin-left:10px" appearance="standard">
         <mat-label>Name</mat-label>
         <input matInput>
@@ -34,28 +34,28 @@
         <mat-option value="option">Album</mat-option>
       </mat-select>
     </mat-form-field>
-    <br>
+    <br> -->
 </div>
+<button style="margin-left:30%;width:200px;" (click)='printVariable()' mat-raised-button>  Print variable  <mat-icon aria-hidden="false">search</mat-icon></button>
 <button style="margin-left:30%;width:200px;" (click)='search()' mat-raised-button>  Search  <mat-icon aria-hidden="false">search</mat-icon></button>
-
 
 <mat-divider></mat-divider>
 
 
 <div>
-Image Field :
+Image Show:
   <mat-list style="display:flex; flex-wrap: wrap;">
-    <mat-card class="photo-card" *ngFor="let photo of photoList">
+    <mat-card class="photo-card">
       <mat-card-header>
-        <mat-card-title>{{photo.title}} </mat-card-title>       
+        <mat-card-title> Photo for showing:</mat-card-title>       
       </mat-card-header>
       <mat-card-content>
-        <img mat-card-image style='height: 300px;' [src]='photo.url'>
+        <img mat-card-image style='height: 300px;' [src]='image_url'>
       </mat-card-content>
-      <mat-card-actions>
+      <!-- <mat-card-actions>
         <button mat-button>Delete</button>
         <button mat-button>Update</button>
-      </mat-card-actions>
+      </mat-card-actions> -->
   </mat-card>
 
 </mat-list>
