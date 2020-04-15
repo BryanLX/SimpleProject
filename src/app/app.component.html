@@ -45,7 +45,7 @@
 <div>
 Image Field :
   <mat-list style="display:flex; flex-wrap: wrap;">
-    <mat-card *ngFor="let photo of photoList">
+    <mat-card class="photo-card" *ngFor="let photo of photoList">
       <mat-card-header>
         <mat-card-title>{{photo.title}} </mat-card-title>       
       </mat-card-header>
@@ -58,8 +58,6 @@ Image Field :
       </mat-card-actions>
   </mat-card>
 
-
-  <app-plant-detail *ngFor="let plantDetail of plants" [plantName]="plantDetail.name" [plantDescription]="plantDetail.instructions" [photoUrl]="plantDetail.photo" [period]="period"></app-plant-detail>
 </mat-list>
 
 

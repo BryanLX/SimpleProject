@@ -7,7 +7,6 @@ import { MatCardModule} from '@angular/material/card';
 import { MatProgressBarModule} from '@angular/material/progress-bar';
 import { MatButtonModule} from '@angular/material/button';
 import { MatToolbarModule} from '@angular/material/toolbar';
-import { PlantDetailComponent} from './plant-detail/plant-detail.component';
 import { MatListModule } from '@angular/material/list';
 import { MatSnackBarModule} from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
@@ -21,8 +20,7 @@ import { MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    PlantDetailComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,

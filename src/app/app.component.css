@@ -22,3 +22,9 @@
 .selection-radio-button {
     margin: 5px;
 }
+
+.photo-card {
+    max-width: 400px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
