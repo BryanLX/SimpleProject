@@ -1,13 +1,66 @@
 <mat-toolbar color="primary">
-    <span>Watermango app</span>
+    <span>Top Hat Testing app</span>
 </mat-toolbar>
 
-<div class="period-setting">
-    Alert me if a plant hasn’t been watered for more than <input type="number" matInput placeholder="5" [(ngModel)]="period"> minitues.
-</div>
+<label id="top-selection">Pick the mode :</label>
+<mat-radio-group
+  aria-labelledby="top-selection"
+  class="selection-group"
+  [(ngModel)]="currentMode">
+  <mat-radio-button class="selection-radio-button " *ngFor="let mode of modes" [value]="mode">
+    {{mode}}
+  </mat-radio-button>
+</mat-radio-group>
+<div>Your favorite season is: {{currentMode}}</div>
 
 
 <mat-divider></mat-divider>
-<mat-list style="display:flex; flex-wrap: wrap;">
-    <app-plant-detail *ngFor="let plantDetail of plants" [plantName]="plantDetail.name" [plantDescription]="plantDetail.instructions" [photoUrl]="plantDetail.photo" [period]="period"></app-plant-detail>
+<div class="search-area">
+    <mat-form-field style= "margin-left:10px" appearance="standard">
+      <mat-label>Id</mat-label>
+      <input [(ngModel)]="photoId" matInput>
+    </mat-form-field>
+    <br>
+    <mat-form-field style= "margin-left:10px" appearance="standard">
+        <mat-label>Name</mat-label>
+        <input matInput>
+    </mat-form-field>
+    <br>
+    <mat-form-field style= "margin-left:10px" appearance="standard">
+      <mat-label>Mode</mat-label>
+      <mat-select>
+        <mat-option value="option">Picture</mat-option>
+        <mat-option value="option">Comment</mat-option>
+        <mat-option value="option">Album</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br>
+</div>
+<button style="margin-left:30%;width:200px;" (click)='search()' mat-raised-button>  Search  <mat-icon aria-hidden="false">search</mat-icon></button>
+
+
+<mat-divider></mat-divider>
+
+
+<div>
+Image Field :
+  <mat-list style="display:flex; flex-wrap: wrap;">
+    <mat-card *ngFor="let photo of photoList">
+      <mat-card-header>
+        <mat-card-title>{{photo.title}} </mat-card-title>       
+      </mat-card-header>
+      <mat-card-content>
+        <img mat-card-image style='height: 300px;' [src]='photo.url'>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>Delete</button>
+        <button mat-button>Update</button>
+      </mat-card-actions>
+  </mat-card>
+
+
+  <app-plant-detail *ngFor="let plantDetail of plants" [plantName]="plantDetail.name" [plantDescription]="plantDetail.instructions" [photoUrl]="plantDetail.photo" [period]="period"></app-plant-detail>
 </mat-list>
+
+
+</div>

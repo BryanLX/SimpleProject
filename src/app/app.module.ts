@@ -14,7 +14,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatDividerModule} from '@angular/material/divider';
 import { MatInputModule} from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
-
+import { MatFormFieldModule} from '@angular/material/form-field';
+import { MatSelectModule} from '@angular/material';
+import { MatRadioModule } from '@angular/material';
+import { MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,11 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     MatDividerModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatRadioModule,
+    MatIconModule
   ],
   entryComponents:[],
   providers: [],
